@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box; /* Prevents padding from breaking width calculations */
 }
 
 body {
@@ -24,21 +25,26 @@ button {
   border: none;
   border-radius: 5px;
   font-weight: 600;
+  cursor: pointer;
 }
 
+/* Modal starts hidden above the viewport */
 .popup-modal {
   padding: 32px 64px;
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
   position: fixed;
+  /* Centers horizontally, puts it completely above the screen vertically */
   top: 50%;
   left: 50%;
-  transform-origin: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100vh);
   pointer-events: none;
-  opacity: 0%;
   text-align: center;
+  z-index: 10; /* Ensures it stays above the backdrop */
+
+  /* Smooth transition for the transform and top properties */
+  transition: transform 0.4s ease-in-out;
 }
 
 .popup-modal p {
@@ -53,11 +59,15 @@ button {
   opacity: 0%;
 }
 
+/* ACTIVE STATES: Slides down to the center of the screen */
 .popup-modal.show {
+  top: 50%;
+  transform: translate(-50%, -50%);
   opacity: 100%;
   pointer-events: all;
 }
 
 .backdrop.show {
-  opacity: 30%;
+  opacity: 30%; /* Fixes invalid 30% CSS syntax */
+  pointer-events: all; /* Allows clicking the backdrop to close it */
 }
