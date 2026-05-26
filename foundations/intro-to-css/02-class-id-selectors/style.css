@@ -18,7 +18,7 @@
 }
 
 /* Target the fourth element using an ID selector (#) */
-#elemnent-four {
+#element-four {
     background-color: #d4edda; /* Light green HEX */
     font-size: 24px;
     font-weight:bold;
