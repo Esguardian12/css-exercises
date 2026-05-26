@@ -71,3 +71,5 @@ button {
   opacity: 30%; /* Fixes invalid 30% CSS syntax */
   pointer-events: all; /* Allows clicking the backdrop to close it */
 }
+
+/*I added the necessary change but need to make sure all were taken cared of, leaving a comment here to for recheck */
