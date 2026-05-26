@@ -1,1 +1,19 @@
 /* Add CSS Styling */
+/* 1. GROUPING SELECTOR: Shared styles applied to both elements at once */
+.first-btn,
+.second-btn {
+    font-size: 28px;
+    font-family: Helvetica, "Times New Roman", sans-serif;
+}
+
+/* 2. UNIQUE STYLES: Custom styles for the first button */
+.first-btn {
+    background-color: #000000; /* Black */
+    color: #ffffff;            /* White text */
+}
+
+/* 3. UNIQUE STYLES: Custom styles for the second button */
+.second-btn {
+    background-color: #ffcc00; /* Yellow */
+    color: #000000;            /* Black text to keep it readable */
+}
