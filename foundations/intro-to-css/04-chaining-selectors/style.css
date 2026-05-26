@@ -1,1 +1,12 @@
 /* Add CSS Styling */
+/* 1. CHAINED SELECTOR: Targets elements containing BOTH 'avatar' AND 'proportioned' */
+.avatar.proportioned {
+    width: 300px;
+    height: auto; /* Atomatically retains original square proportions */
+}
+
+/* 2. CHAINED SELECTOR: Targets elements containing BOTH 'avatar' AND 'distorted' */
+.avatar.distorted {
+    width:200px;
+    height: 400px; /* Hardcoded to be twice as big as the 200px width */
+}
