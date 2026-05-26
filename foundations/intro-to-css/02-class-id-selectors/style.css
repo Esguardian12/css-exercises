@@ -1,1 +1,25 @@
 /* Add CSS Styling */
+
+/* Target all odd numbers using a class selector (.) */
+.odd-item {
+    background-color: #ffcccc; /* Light red/pink HEX */
+    font-family: Verdana, "DejaVu Sans", sans-serif;
+}
+
+/* Target all second element using an ID selector (#) */
+#element-two {
+    color: rgb(0, 102, 204); /* Blue RGB */
+    font-size: 36px;
+}
+
+/* Target the third element's modifier class to change its font size */
+.cooler-item {
+    font-size: 24px;
+}
+
+/* Target the fourth element using an ID selector (#) */
+#elemnent-four {
+    background-color: #d4edda; /* Light green HEX */
+    font-size: 24px;
+    font-weight:bold;
+}
