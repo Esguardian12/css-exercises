@@ -1,26 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* GLOBAL RESET: Removes hidden browser spaces */
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+
+  /* Flex direction sets up our main vertical sections */
+  display: flex;
+  flex-direction: column;
 }
 
 img {
   width: 600px;
+  max-width: 100%; /* Ensures logo scales down safely if screen narrows */
 }
 
 button {
   font-family: Roboto, sans-serif;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   background: #eee;
+  color: #3c4043;
+  padding: 10px 16px;
+  cursor: pointer;
 }
 
 input {
   border: 1px solid #ddd;
-  border-radius: 16px;
-  padding: 8px 24px;
-  width: 400px;
+  border-radius: 24px;
+  padding: 12px 24px;
+  width: 580px;
+  max-width: 90vw;
+  outline: none;
+}
+
+/* --- Global Utilities for Lists and Links --- */
+
+ul {
+  list-style-type: none; /* Removes bullet dots */
+  margin: 0;
+  padding: 0;
+  display: flex;         /* Makes list links sit side-by-side */
+  gap: 16px;             /* Space between adjacent links */
+}
+
+a {
+  text-decoration: none;  /* Removes underline decoration */
+  color: #5f6368;
+  font-size: 14px;        /* Matches modern layout sizing */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Layout Components --- */
+
+.header, .footer {
+  display: flex;
+  justify-content: space-between; /* Pushes left-links and right-links to extreme sides */
+  padding: 18px 24px;             /* Padding around the top/bottom frame lines */
+}
+
+.footer {
+  background: #f2f2f2; /* Exact color hex code match for hte gray base */
+  border-top: 1px solid #e4e4e4;
+}
+
+.content {
+  /* Expands middle space, forcing footer to bottom */
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Center logo, inputs, and buttons horizontally */
+  justify-content: center; /* Centers everything cleanly vertically */
+  gap: 28px;               /* Adds perfectly spaced rows between your central components */
+
+  /* Shifts the entire container slightly down from the header */
+  transform: translateY(-20px);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;               /* Space between the two main actions buttons */ 
 }

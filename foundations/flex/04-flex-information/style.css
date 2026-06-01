@@ -1,15 +1,35 @@
 body {
   font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 40px 20px 80px 20px; /* Gives space at the top and prevents footer overlap*/
+
+  /* Turn the entire page into a grid system */
+  display: grid;
+  justify-content: center;   /* Center the whole column layout horizontally */
+
+  /* Creates 4 horizontal tracks, each exactly 200px wide */
+  grid-template-columns: repeat(4, 200px);
+
+  /* Spacing: 32px between row 1 (title) and row 2 (items). 52px between columns */
+  row-gap: 32px;
+  column-gap: 52px;
 }
 
 img {
   width: 100px;
   height: 100px;
+  justify-self: center; /* Centers the images horizontally inside their 200px grid areas */
+  grid-row: 2;          /* Forces all images into the second row */
 }
 
 .title {
   font-size: 36px;
   font-weight: 900;
+  text-align: center;
+
+  /* Spans the title across all 4 items tracks so it sits perfectly in the center of the page */
+  grid-column: 1 / span 4;
+  grid-row: 1;
 }
 
 /* do not edit this footer */

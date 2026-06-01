@@ -2,28 +2,92 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100vh;
+
+  /* Stack header, main content, and footer vertically */
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   height: 72px;
   background: darkmagenta;
   color: white;
+
+  /* Text requirements */
+  font-size: 32px;
+  font-weight: 900;
+
+  /* Centers text vertically and sets edge indentation padding */
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+
+  /* Vertically and horizontally centers the footer content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Added Layout Container --- */
+.main-container {
+  display: flex;
+  flex-direction: row;   /* Puts sidebar and cards content side-by-side */
+  flex-grow: 1;          /* Stretches container to take up all remaining viewport height */
 }
 
 .sidebar {
   width: 300px;
   background: royalblue;
   box-sizing: border-box;
+  padding: 16px;         /* Adds 16px padding inside sidebar wrapper */
+
+  /* Keeps sidebar locked at 300px width */
+  flex-shrink: 0;
 }
+
+/* Sidebar Navigation resets */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar a {
+  font-size: 24px;
+  color: white;
+  text-decoration: none; /* Removes standard underline text link line */
+}
+
+.cards-content-area {
+  flex-grow: 1;         /* Allocates all remaining right-side space to cards */
+  padding: 48px;        /* Sets 48px boundary around the container edges */
+
+  /* Flexbox positioning configuration for the cards grid */
+  display: flex ;
+  flex-direction: row;
+  flex-wrap: wrap;           /* Enables multi-line wrapping */
+  gap: 32px;                 /* Spatial insulation boundary gap between cards */ 
+  align-content: flex-start; /* Prevents rows from stretching vertically */
+}
+
 
 .card {
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+  padding: 24px;
+  background: white;
+
+  /* Calculates dynamic layout sizing: approx 3 cards per row maximum */
+  flex: 1 1 calc(33.333% - 32px);
+  min-width: 280px;    /* Safeguards clean readability break layout constraints */
 }

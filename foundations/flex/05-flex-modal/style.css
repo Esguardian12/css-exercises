@@ -17,9 +17,15 @@ body {
 
 .modal {
   background: white;
-  width: 480px;
+  width: 580px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+
+  /* Layout constraints */
+  display: flex;
+  flex-direction: row; /* Arranges the icon and content wrapper side-by-side */
+  padding: 24px;       /* Consistent inner padding around edges */
+  gap: 24px;           /* Equal space on left and right sides of the icon */
 }
 
 .icon {
@@ -33,7 +39,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* CRITICAL: Prevents the icon box from squeezing when text gets long */
+  flex-shrink: 0;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;                /* Makes header bold */
+  margin-bottom: 8px;                 /* Makes font size slightly larger than paragraph */
+}
+
+.text{
+  margin-bottom: 16px;
+}
+
 
 .close-button {
   background: #eee;
